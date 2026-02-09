@@ -1,0 +1,78 @@
+@page
+@model StudentRegistrationSystem.Pages.Students.CreateModel
+@{
+    ViewData["Title"] = "Register Student";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title mb-0">Register New Student</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label asp-for="Student.FullName" class="form-label"></label>
+                                <input asp-for="Student.FullName" class="form-control" placeholder="Enter full name" />
+                                <span asp-validation-for="Student.FullName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Student.RegistrationNumber" class="form-label"></label>
+                                <input asp-for="Student.RegistrationNumber" class="form-control"
+                                       placeholder="e.g., REG/2024/001" />
+                                <span asp-validation-for="Student.RegistrationNumber" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Student.YearOfStudy" class="form-label"></label>
+                                <select asp-for="Student.YearOfStudy" class="form-select">
+                                    <option value="">Select Year</option>
+                                    <option value="1">Year 1</option>
+                                    <option value="2">Year 2</option>
+                                    <option value="3">Year 3</option>
+                                    <option value="4">Year 4</option>
+                                    <option value="5">Year 5</option>
+                                </select>
+                                <span asp-validation-for="Student.YearOfStudy" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label asp-for="Student.Course" class="form-label"></label>
+                                <input asp-for="Student.Course" class="form-control" placeholder="Enter course name" />
+                                <span asp-validation-for="Student.Course" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a asp-page="Index" class="btn btn-secondary me-md-2">
+                                        <i class="bi bi-arrow-left"></i> Back to List
+                                    </a>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-save"></i> Register Student
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

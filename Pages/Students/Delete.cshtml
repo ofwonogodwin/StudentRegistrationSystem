@@ -1,0 +1,62 @@
+@page
+@model StudentRegistrationSystem.Pages.Students.DeleteModel
+@{
+    ViewData["Title"] = "Delete Student";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="card-title mb-0">
+                        <i class="bi bi-exclamation-triangle"></i> Delete Student
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Warning!</strong> Are you sure you want to delete this student? This action cannot be undone.
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-5">@Html.DisplayNameFor(model => model.Student.FullName):</dt>
+                                <dd class="col-sm-7">@Html.DisplayFor(model => model.Student.FullName)</dd>
+
+                                <dt class="col-sm-5">@Html.DisplayNameFor(model => model.Student.RegistrationNumber):</dt>
+                                <dd class="col-sm-7">@Html.DisplayFor(model => model.Student.RegistrationNumber)</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Student.Course):</dt>
+                                <dd class="col-sm-8">@Html.DisplayFor(model => model.Student.Course)</dd>
+
+                                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Student.YearOfStudy):</dt>
+                                <dd class="col-sm-8">Year @Html.DisplayFor(model => model.Student.YearOfStudy)</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <form method="post">
+                                <input type="hidden" asp-for="Student.Id" />
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a asp-page="./Index" class="btn btn-secondary me-md-2">
+                                        <i class="bi bi-arrow-left"></i> Back to List
+                                    </a>
+                                    <button type="submit" class="btn btn-danger" 
+                                            onclick="return confirm('Are you sure you want to delete this student?')">
+                                        <i class="bi bi-trash"></i> Delete Student
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
