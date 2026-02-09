@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "EAg3BIWEIKtLAeRsNlpvswbJRHNHER6B6I2+pBL4a+I=",
+  "Source": "StudentRegistrationSystem",
+  "BasePath": "_content/StudentRegistrationSystem",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "StudentRegistrationSystem/wwwroot",
+      "Source": "StudentRegistrationSystem",
+      "ContentRoot": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/",
+      "BasePath": "_content/StudentRegistrationSystem",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/css/site.css",
+      "SourceId": "StudentRegistrationSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/",
+      "BasePath": "_content/StudentRegistrationSystem",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f63kampqxp",
+      "Integrity": "6UCnaKH+RNWuovSfhubnIg+bKR7XTXm1bM7/Xqbl6ik=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/js/site.js",
+      "SourceId": "StudentRegistrationSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/",
+      "BasePath": "_content/StudentRegistrationSystem",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c2zcxpnop8",
+      "Integrity": "fI5F29ukneDPDr4PmiC2NiY0UqcZTsfLYQwLPKUgrqo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/site.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/site.css",
+      "AssetFile": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1646"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6UCnaKH+RNWuovSfhubnIg+bKR7XTXm1bM7/Xqbl6ik=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Feb 2026 14:56:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6UCnaKH+RNWuovSfhubnIg+bKR7XTXm1bM7/Xqbl6ik="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.f63kampqxp.css",
+      "AssetFile": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1646"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6UCnaKH+RNWuovSfhubnIg+bKR7XTXm1bM7/Xqbl6ik=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Feb 2026 14:56:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f63kampqxp"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6UCnaKH+RNWuovSfhubnIg+bKR7XTXm1bM7/Xqbl6ik="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.c2zcxpnop8.js",
+      "AssetFile": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/js/site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "996"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fI5F29ukneDPDr4PmiC2NiY0UqcZTsfLYQwLPKUgrqo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Feb 2026 14:56:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c2zcxpnop8"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fI5F29ukneDPDr4PmiC2NiY0UqcZTsfLYQwLPKUgrqo="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/js/site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "996"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fI5F29ukneDPDr4PmiC2NiY0UqcZTsfLYQwLPKUgrqo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Feb 2026 14:56:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fI5F29ukneDPDr4PmiC2NiY0UqcZTsfLYQwLPKUgrqo="
+        }
+      ]
+    }
+  ]
+}
