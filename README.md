@@ -59,7 +59,7 @@ StudentRegistrationSystem/
 ### Prerequisites
 
 - .NET 8.0 SDK or later
-- Visual Studio 2022, VS Code, or any C# IDE
+- Jetbrains Rider
 
 ### Installation & Setup
 
@@ -69,12 +69,10 @@ StudentRegistrationSystem/
    ```
 
 2. **Restore NuGet packages:**
-   ```bash
    dotnet restore
-   ```
 
 3. **Install Entity Framework Core tools (if not already installed):**
-   ```bash
+   
    dotnet tool install --global dotnet-ef
    ```
 
@@ -94,7 +92,7 @@ StudentRegistrationSystem/
 
 6. **Open your browser and navigate to:**
    ```
-   https://localhost:7000/Students
+   https://localhost:5000/Students
    ```
 
 ## Entity Framework Commands
