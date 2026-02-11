@@ -20,7 +20,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// Commented out for development - uncomment for production with proper SSL certificate
+// app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
