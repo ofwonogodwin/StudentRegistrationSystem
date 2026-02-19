@@ -1,4 +1,5 @@
 # Student Registration System - Godwin Ofwono
+we are cooking
 
 A complete ASP.NET Core Razor Pages application for managing student registrations using Entity Framework Core with SQLite database.
 
