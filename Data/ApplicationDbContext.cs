@@ -51,19 +51,6 @@ namespace StudentRegistrationSystem.Data
                 entity.HasIndex(e => e.Username).IsUnique();
                 entity.HasIndex(e => e.Email).IsUnique();
             });
-
-            // Seed default admin user (password: admin123)
-            modelBuilder.Entity<User>().HasData(new User
-            {
-                Id = 1,
-                Username = "admin",
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
-                FullName = "System Administrator",
-                Email = "admin@studentreg.com",
-                Role = "Admin",
-                IsActive = true,
-                CreatedAt = DateTime.Now
-            });
         }
     }
 }

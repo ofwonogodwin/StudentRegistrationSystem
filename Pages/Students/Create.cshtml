@@ -25,13 +25,14 @@
                         <h6 class="text-muted mb-3 border-bottom pb-2">
                             <i class="bi bi-person me-2"></i>Personal Information
                         </h6>
-                        
+
                         <div class="row">
                             <div class="col-md-8 mb-3">
                                 <label asp-for="Student.FullName" class="form-label">
                                     <i class="bi bi-person-badge me-1"></i>Full Name <span class="text-danger">*</span>
                                 </label>
-                                <input asp-for="Student.FullName" class="form-control" placeholder="Enter full name (e.g., John Doe)" />
+                                <input asp-for="Student.FullName" class="form-control"
+                                       placeholder="Enter full name (e.g., John Doe)" />
                                 <span asp-validation-for="Student.FullName" class="text-danger"></span>
                             </div>
                             <div class="col-md-4 mb-3">
@@ -73,9 +74,11 @@
                         <div class="row">
                             <div class="col-md-12 mb-3">
                                 <label asp-for="Student.Email" class="form-label">
-                                    <i class="bi bi-envelope-at me-1"></i>Email Address <span class="text-danger">*</span>
+                                    <i class="bi bi-envelope-at me-1"></i>Email Address <span
+                                    class="text-danger">*</span>
                                 </label>
-                                <input asp-for="Student.Email" type="email" class="form-control" placeholder="student@example.com" />
+                                <input asp-for="Student.Email" type="email" class="form-control"
+                                       placeholder="student@example.com" />
                                 <span asp-validation-for="Student.Email" class="text-danger"></span>
                             </div>
                         </div>
@@ -88,9 +91,11 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label asp-for="Student.RegistrationNumber" class="form-label">
-                                    <i class="bi bi-hash me-1"></i>Registration Number <span class="text-danger">*</span>
+                                    <i class="bi bi-hash me-1"></i>Registration Number <span
+                                    class="text-danger">*</span>
                                 </label>
-                                <input asp-for="Student.RegistrationNumber" class="form-control" placeholder="e.g., REG/2024/001" />
+                                <input asp-for="Student.RegistrationNumber" class="form-control"
+                                       placeholder="e.g., REG/2024/001" />
                                 <span asp-validation-for="Student.RegistrationNumber" class="text-danger"></span>
                             </div>
                             <div class="col-md-6 mb-3">
@@ -114,7 +119,8 @@
                                 <label asp-for="Student.Course" class="form-label">
                                     <i class="bi bi-book me-1"></i>Course / Program <span class="text-danger">*</span>
                                 </label>
-                                <input asp-for="Student.Course" class="form-control" placeholder="e.g., Bachelor of Software Engineering" />
+                                <input asp-for="Student.Course" class="form-control"
+                                       placeholder="e.g., Bachelor of Software Engineering" />
                                 <span asp-validation-for="Student.Course" class="text-danger"></span>
                             </div>
                         </div>

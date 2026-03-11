@@ -53,7 +53,7 @@
         <form method="get" class="row g-3 align-items-end">
             <div class="col-md-4">
                 <label class="form-label"><i class="bi bi-search me-1"></i>Search</label>
-                <input type="text" asp-for="SearchTerm" class="form-control search-input" 
+                <input type="text" asp-for="SearchTerm" class="form-control search-input"
                        placeholder="Search by name, registration no, email..." />
             </div>
             <div class="col-md-2">
@@ -105,7 +105,8 @@
     </div>
 
     <!-- Active Filters Display -->
-    @if (!string.IsNullOrEmpty(Model.SearchTerm) || !string.IsNullOrEmpty(Model.CourseFilter) || Model.YearFilter.HasValue)
+    @if (!string.IsNullOrEmpty(Model.SearchTerm) || !string.IsNullOrEmpty(Model.CourseFilter) ||
+        Model.YearFilter.HasValue)
     {
         <div class="mb-3">
             <span class="text-muted me-2">Active filters:</span>
@@ -156,80 +157,89 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @{ var rowNum = 1; }
+                            @{
+                                var rowNum = 1;
+                            }
                             @foreach (var student in Model.Students)
                             {
                                 <tr>
                                     <td>@rowNum</td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <div class="user-avatar me-2" style="background: linear-gradient(135deg, #4361ee 0%, #7209b7 100%); width: 36px; height: 36px;">
+                                            <div class="user-avatar me-2"
+                                                 style="background: linear-gradient(135deg, #4361ee 0%, #7209b7 100%); width: 36px; height: 36px;">
                                                 <i class="bi bi-person text-white"></i>
                                             </div>
                                             <div>
                                                 <strong>@student.FullName</strong>
                                                 @if (!string.IsNullOrEmpty(student.PhoneNumber))
                                                 {
-                                                    <br/><small class="text-muted"><i class="bi bi-telephone me-1"></i>@student.PhoneNumber</small>
-                                                }
+                                                    <br />
+                                                
+                                                    <small class="text-muted"><i
+                                                        class="bi bi-telephone me-1"></i>@student.PhoneNumber</small>
+                                                    }
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td><code class="text-primary">@student.RegistrationNumber</code></td>
-                                    <td>
-                                        <a href="mailto:@student.Email" class="text-decoration-none">
-                                            <i class="bi bi-envelope me-1"></i>@student.Email
-                                        </a>
-                                    </td>
-                                    <td>@student.Course</td>
-                                    <td>
-                                        <span class="badge badge-year">Year @student.YearOfStudy</span>
-                                    </td>
-                                    <td>
-                                        <small class="text-muted">
-                                            <i class="bi bi-calendar-event me-1"></i>@student.CreatedAt.ToString("dd MMM yyyy")
-                                        </small>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="action-buttons">
-                                            <a asp-page="./Edit" asp-route-id="@student.Id" class="btn btn-sm btn-outline-primary" title="Edit">
-                                                <i class="bi bi-pencil-fill"></i>
+                                        </td>
+                                        <td><code class="text-primary">@student.RegistrationNumber</code></td>
+                                        <td>
+                                            <a href="mailto:@student.Email" class="text-decoration-none">
+                                                <i class="bi bi-envelope me-1"></i>@student.Email
                                             </a>
-                                            <a asp-page="./Delete" asp-route-id="@student.Id" class="btn btn-sm btn-outline-danger" title="Delete">
-                                                <i class="bi bi-trash-fill"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                rowNum++;
-                            }
-                        </tbody>
-                    </table>
+                                        </td>
+                                        <td>@student.Course</td>
+                                        <td>
+                                            <span class="badge badge-year">Year @student.YearOfStudy</span>
+                                        </td>
+                                        <td>
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar-event me-1"></i>@student.CreatedAt.ToString("dd MMM yyyy")
+                                            </small>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="action-buttons">
+                                                <a asp-page="./Edit" asp-route-id="@student.Id"
+                                                       class="btn btn-sm btn-outline-primary" title="Edit">
+                                                    <i class="bi bi-pencil-fill"></i>
+                                                </a>
+                                                <a asp-page="./Delete" asp-route-id="@student.Id"
+                                                       class="btn btn-sm btn-outline-danger" title="Delete">
+                                                    <i class="bi bi-trash-fill"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    rowNum++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
     else
-    {
-        <div class="card">
-            <div class="card-body empty-state">
-                <i class="bi bi-inbox"></i>
-                <h4>No Students Found</h4>
-                @if (!string.IsNullOrEmpty(Model.SearchTerm) || !string.IsNullOrEmpty(Model.CourseFilter) || Model.YearFilter.HasValue)
-                {
-                    <p class="text-muted">No students match your current filters. Try adjusting your search criteria.</p>
-                    <a asp-page="Index" class="btn btn-outline-primary">
-                        <i class="bi bi-x-circle me-2"></i>Clear All Filters
-                    </a>
-                }
-                else
-                {
-                    <p class="text-muted">There are no students registered in the system yet.</p>
-                    <a asp-page="Create" class="btn btn-primary">
-                        <i class="bi bi-person-plus-fill me-2"></i>Register First Student
-                    </a>
-                }
+        {
+            <div class="card">
+                <div class="card-body empty-state">
+                    <i class="bi bi-inbox"></i>
+                    <h4>No Students Found</h4>
+                    @if (!string.IsNullOrEmpty(Model.SearchTerm) || !string.IsNullOrEmpty(Model.CourseFilter) ||
+                                Model.YearFilter.HasValue)
+                    {
+                        <p class="text-muted">No students match your current filters. Try adjusting your search criteria.</p>
+                        <a asp-page="Index" class="btn btn-outline-primary">
+                            <i class="bi bi-x-circle me-2"></i>Clear All Filters
+                        </a>
+                    }
+                    else
+                    {
+                        <p class="text-muted">There are no students registered in the system yet.</p>
+                        <a asp-page="Create" class="btn btn-primary">
+                            <i class="bi bi-person-plus-fill me-2"></i>Register First Student
+                        </a>
+                    }
+                </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xeKr6zxjDMs=",
+  "dgSpecHash": "RMnVXyT7Ywk=",
   "success": true,
   "projectFilePath": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/StudentRegistrationSystem.csproj",
   "expectedPackageFiles": [
+    "/home/godwin-ofwono/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/home/godwin-ofwono/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/home/godwin-ofwono/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/godwin-ofwono/.nuget/packages/humanizer.core.af/2.14.1/humanizer.core.af.2.14.1.nupkg.sha512",
