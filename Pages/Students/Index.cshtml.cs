@@ -32,7 +32,7 @@ namespace StudentRegistrationSystem.Pages.Students
         public string? SortOrder { get; set; }
 
         public List<string> AvailableCourses { get; set; } = new List<string>();
-        
+
         public int TotalStudents { get; set; }
         public int FilteredCount { get; set; }
 
@@ -52,7 +52,7 @@ namespace StudentRegistrationSystem.Pages.Students
             if (!string.IsNullOrWhiteSpace(SearchTerm))
             {
                 var searchLower = SearchTerm.ToLower();
-                query = query.Where(s => 
+                query = query.Where(s =>
                     s.FullName.ToLower().Contains(searchLower) ||
                     s.RegistrationNumber.ToLower().Contains(searchLower) ||
                     s.Email.ToLower().Contains(searchLower) ||

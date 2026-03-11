@@ -188,14 +188,16 @@ main {
 }
 
 /* Form Styling */
-.form-control, .form-select {
+.form-control,
+.form-select {
     border: 2px solid #e9ecef;
     border-radius: 0.5rem;
     padding: 0.75rem 1rem;
     transition: all var(--transition-speed) ease;
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
 }
@@ -304,13 +306,15 @@ main {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.card, .alert {
+.card,
+.alert {
     animation: fadeIn 0.4s ease-out;
 }
 
@@ -373,11 +377,11 @@ main {
     .page-header {
         padding: 1.5rem;
     }
-    
+
     .search-box {
         padding: 1rem;
     }
-    
+
     .stats-card {
         margin-bottom: 1rem;
     }
