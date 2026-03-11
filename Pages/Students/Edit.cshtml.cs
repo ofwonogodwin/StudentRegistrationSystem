@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using StudentRegistrationSystem.Models;
 
 namespace StudentRegistrationSystem.Pages.Students
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly ApplicationDbContext _context;
@@ -53,6 +55,18 @@ namespace StudentRegistrationSystem.Pages.Students
                 return Page();
             }
 
+            // Check if email already exists for a different student
+            var existingEmail = await _context.Students
+                .FirstOrDefaultAsync(s => s.Email == Student.Email && s.Id != Student.Id);
+
+            if (existingEmail != null)
+            {
+                ModelState.AddModelError("Student.Email",
+                    "A student with this email address already exists.");
+                return Page();
+            }
+
+            Student.UpdatedAt = DateTime.Now;
             _context.Attach(Student).State = EntityState.Modified;
 
             try

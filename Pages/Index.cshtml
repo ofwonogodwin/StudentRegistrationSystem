@@ -1,0 +1,203 @@
+@page
+@model StudentRegistrationSystem.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="bi bi-stars"></i>
+                        Modern Student Management
+                    </div>
+                    <h1>
+                        Streamline Your <span>Student Registration</span> Process
+                    </h1>
+                    <p>
+                        A powerful, intuitive platform designed to simplify student enrollment,
+                        record management, and academic administration for educational institutions.
+                    </p>
+                    <div class="hero-buttons">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <a asp-page="/Students/Index" class="btn btn-primary btn-lg">
+                                <i class="bi bi-people"></i> View Students
+                            </a>
+                            <a asp-page="/Students/Create" class="btn btn-outline btn-lg">
+                                <i class="bi bi-person-plus"></i> Register Student
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-page="/Account/Register" class="btn btn-primary btn-lg">
+                                Get Started Free
+                            </a>
+                            <a asp-page="/Account/Login" class="btn btn-outline btn-lg">
+                                Sign In
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-visual">
+                    <div class="hero-pattern">
+                        <i class="bi bi-mortarboard-fill hero-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-6">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Students Registered</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Courses Available</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-item">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Uptime Guarantee</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Powerful Features</h2>
+            <p>
+                Everything you need to manage student records efficiently and effectively.
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-person-plus-fill"></i>
+                    </div>
+                    <h5>Easy Registration</h5>
+                    <p>
+                        Streamlined student registration process with intuitive forms and
+                        real-time validation to ensure data accuracy.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <h5>Smart Search</h5>
+                    <p>
+                        Quickly find any student with powerful search and filtering
+                        capabilities across all fields.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h5>Secure Access</h5>
+                    <p>
+                        Role-based authentication ensures only authorized personnel
+                        can access and modify student records.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-pencil-square"></i>
+                    </div>
+                    <h5>Easy Updates</h5>
+                    <p>
+                        Update student information quickly with our streamlined
+                        editing interface and change tracking.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-bar-chart-fill"></i>
+                    </div>
+                    <h5>Analytics</h5>
+                    <p>
+                        Get insights into enrollment trends, course distribution,
+                        and other key metrics at a glance.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h5>Responsive Design</h5>
+                    <p>
+                        Access the system from any device - desktop, tablet, or
+                        mobile - with a consistent experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Info Section (CTA Banner) -->
+<section class="info-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2>Ready to Get Started?</h2>
+                <p>
+                    Join thousands of educational institutions using StudentReg to manage
+                    their student registration process efficiently. Sign up today and
+                    experience the difference.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a asp-page="/Students/Create" class="btn btn-primary btn-lg">
+                        <i class="bi bi-person-plus me-2"></i>Register Student
+                    </a>
+                }
+                else
+                {
+                    <a asp-page="/Account/Register" class="btn btn-primary btn-lg">
+                        Create Free Account
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</section>

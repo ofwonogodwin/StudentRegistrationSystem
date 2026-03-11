@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using StudentRegistrationSystem.Models;
 
 namespace StudentRegistrationSystem.Pages.Students
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly ApplicationDbContext _context;
@@ -41,6 +43,18 @@ namespace StudentRegistrationSystem.Pages.Students
                 return Page();
             }
 
+            // Check if email already exists
+            var existingEmail = await _context.Students
+                .FirstOrDefaultAsync(s => s.Email == Student.Email);
+
+            if (existingEmail != null)
+            {
+                ModelState.AddModelError("Student.Email",
+                    "A student with this email address already exists.");
+                return Page();
+            }
+
+            Student.CreatedAt = DateTime.Now;
             _context.Students.Add(Student);
             await _context.SaveChangesAsync();
 
