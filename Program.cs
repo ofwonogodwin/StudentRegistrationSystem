@@ -56,11 +56,11 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
 
     // Seed admin user if not exists
-    if (!context.Users.Any(u => u.Username == "admin"))
+    if (!context.Users.Any(u => u.Email == "admin@studentreg.com"))
     {
         context.Users.Add(new User
         {
-            Username = "admin",
+            Username = "admin@studentreg.com",
             PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
             FullName = "System Administrator",
             Email = "admin@studentreg.com",

@@ -25,21 +25,15 @@
                             {
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     <i class="bi bi-exclamation-triangle-fill me-2"></i>@Model.ErrorMessage
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
                                 </div>
                             }
 
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label asp-for="Input.FullName" class="form-label">Full Name</label>
-                                    <input asp-for="Input.FullName" class="form-control" placeholder="John Doe" />
-                                    <span asp-validation-for="Input.FullName" class="text-danger small"></span>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label asp-for="Input.Username" class="form-label">Username</label>
-                                    <input asp-for="Input.Username" class="form-control" placeholder="johndoe" />
-                                    <span asp-validation-for="Input.Username" class="text-danger small"></span>
-                                </div>
+                            <div class="mb-3">
+                                <label asp-for="Input.FullName" class="form-label">Full Name</label>
+                                <input asp-for="Input.FullName" class="form-control" placeholder="John Doe" />
+                                <span asp-validation-for="Input.FullName" class="text-danger small"></span>
                             </div>
 
                             <div class="mb-3">
@@ -51,12 +45,14 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label asp-for="Input.Password" class="form-label">Password</label>
-                                    <input asp-for="Input.Password" type="password" class="form-control" placeholder="Min 6 characters" />
+                                    <input asp-for="Input.Password" type="password" class="form-control"
+                                           placeholder="Min 6 characters" />
                                     <span asp-validation-for="Input.Password" class="text-danger small"></span>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label asp-for="Input.ConfirmPassword" class="form-label">Confirm Password</label>
-                                    <input asp-for="Input.ConfirmPassword" type="password" class="form-control" placeholder="Re-enter password" />
+                                    <input asp-for="Input.ConfirmPassword" type="password" class="form-control"
+                                           placeholder="Re-enter password" />
                                     <span asp-validation-for="Input.ConfirmPassword" class="text-danger small"></span>
                                 </div>
                             </div>
@@ -79,5 +75,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

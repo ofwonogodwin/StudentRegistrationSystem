@@ -20,25 +20,28 @@
                     <div class="auth-body">
                         <form method="post">
                             <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
-                            
+
                             @if (!string.IsNullOrEmpty(Model.ErrorMessage))
                             {
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     <i class="bi bi-exclamation-triangle-fill me-2"></i>@Model.ErrorMessage
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
                                 </div>
                             }
 
                             <div class="mb-3">
-                                <label asp-for="Input.Username" class="form-label">Username</label>
-                                <input asp-for="Input.Username" class="form-control" placeholder="Enter your username" autofocus />
-                                <span asp-validation-for="Input.Username" class="text-danger small"></span>
+                                <label asp-for="Input.Email" class="form-label">Email Address</label>
+                                <input asp-for="Input.Email" class="form-control" type="email" placeholder="Enter your email"
+                                       autofocus />
+                                <span asp-validation-for="Input.Email" class="text-danger small"></span>
                             </div>
 
                             <div class="mb-3">
                                 <label asp-for="Input.Password" class="form-label">Password</label>
                                 <div class="input-group">
-                                    <input asp-for="Input.Password" type="password" class="form-control" placeholder="Enter your password" id="passwordInput" />
+                                    <input asp-for="Input.Password" type="password" class="form-control"
+                                           placeholder="Enter your password" id="passwordInput" />
                                     <button class="btn btn-outline-secondary" type="button" onclick="togglePassword()">
                                         <i class="bi bi-eye" id="toggleIcon"></i>
                                     </button>
@@ -63,11 +66,11 @@
                         <a asp-page="/Account/Register">Register here</a>
                     </div>
                 </div>
-                
+
                 <div class="text-center mt-4">
                     <small class="text-muted">
                         <i class="bi bi-info-circle me-1"></i>
-                        Default: <strong>admin</strong> / <strong>admin123</strong>
+                        Default: <strong>admin@studentreg.com</strong> / <strong>admin123</strong>
                     </small>
                 </div>
             </div>
@@ -76,20 +79,22 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
     <script>
-        function togglePassword() {
-            const passwordInput = document.getElementById('passwordInput');
-            const toggleIcon = document.getElementById('toggleIcon');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                toggleIcon.classList.remove('bi-eye');
-                toggleIcon.classList.add('bi-eye-slash');
-            } else {
-                passwordInput.type = 'password';
-                toggleIcon.classList.remove('bi-eye-slash');
-                toggleIcon.classList.add('bi-eye');
+            function togglePassword() {
+                const passwordInput = document.getElementById('passwordInput');
+                const toggleIcon = document.getElementById('toggleIcon');
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    toggleIcon.classList.remove('bi-eye');
+                    toggleIcon.classList.add('bi-eye-slash');
+                } else {
+                    passwordInput.type = 'password';
+                    toggleIcon.classList.remove('bi-eye-slash');
+                    toggleIcon.classList.add('bi-eye');
+                }
             }
-        }
     </script>
 }

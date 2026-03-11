@@ -57,26 +57,27 @@
                                         <dd class="col-sm-7">@Model.Student.Course</dd>
 
                                         <dt class="col-sm-5">Year:</dt>
-                                        <dd class="col-sm-7"><span class="badge bg-primary-subtle text-primary">Year @Model.Student.YearOfStudy</span></dd>
-                                    </dl>
+                                        <dd class="col-sm-7"><span class="badge bg-primary-subtle text-primary">Year
+                                            @Model.Student.YearOfStudy</span></dd>
+                                        </dl>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <form method="post">
-                        <input type="hidden" asp-for="Student.Id" />
-                        <div class="d-flex justify-content-between">
-                            <a asp-page="./Index" class="btn btn-outline-secondary">
-                                <i class="bi bi-arrow-left me-2"></i>Cancel
-                            </a>
-                            <button type="submit" class="btn btn-danger btn-lg">
-                                <i class="bi bi-trash-fill me-2"></i>Yes, Delete Student
-                            </button>
-                        </div>
-                    </form>
+                        <form method="post">
+                            <input type="hidden" asp-for="Student.Id" />
+                            <div class="d-flex justify-content-between">
+                                <a asp-page="./Index" class="btn btn-outline-secondary">
+                                    <i class="bi bi-arrow-left me-2"></i>Cancel
+                                </a>
+                                <button type="submit" class="btn btn-danger btn-lg">
+                                    <i class="bi bi-trash-fill me-2"></i>Yes, Delete Student
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

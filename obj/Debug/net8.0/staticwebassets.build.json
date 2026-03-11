@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0X58b+Jogb3+2OLoRkmIaRwvYJJJWNnzTn/enubLFgA=",
+  "Hash": "RJaWKe/9G7jRoSxMu6FXgXlcDPzVsjr5Q++SYR2CQPA=",
   "Source": "StudentRegistrationSystem",
   "BasePath": "_content/StudentRegistrationSystem",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "l6pejqx6ug",
-      "Integrity": "/aGqfoSzUzZ4E35Na/dEBH8bKJf/nmuW/W62rLDLq2A=",
+      "Fingerprint": "64frygq341",
+      "Integrity": "ungAgw/WK4O1/nWJASCLvMZmkv4qrSuF/LsHWEGlsNc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -61,6 +61,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/site.64frygq341.css",
+      "AssetFile": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28143"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ungAgw/WK4O1/nWJASCLvMZmkv4qrSuF/LsHWEGlsNc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 13:22:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "64frygq341"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ungAgw/WK4O1/nWJASCLvMZmkv4qrSuF/LsHWEGlsNc="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/css/site.css",
       "Selectors": [],
@@ -71,7 +116,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7301"
+          "Value": "28143"
         },
         {
           "Name": "Content-Type",
@@ -79,11 +124,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/aGqfoSzUzZ4E35Na/dEBH8bKJf/nmuW/W62rLDLq2A=\""
+          "Value": "\"ungAgw/WK4O1/nWJASCLvMZmkv4qrSuF/LsHWEGlsNc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Mar 2026 09:40:19 GMT"
+          "Value": "Wed, 11 Mar 2026 13:22:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93,52 +138,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/aGqfoSzUzZ4E35Na/dEBH8bKJf/nmuW/W62rLDLq2A="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.l6pejqx6ug.css",
-      "AssetFile": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/wwwroot/css/site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7301"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/aGqfoSzUzZ4E35Na/dEBH8bKJf/nmuW/W62rLDLq2A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 11 Mar 2026 09:40:19 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "l6pejqx6ug"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-/aGqfoSzUzZ4E35Na/dEBH8bKJf/nmuW/W62rLDLq2A="
+          "Value": "sha256-ungAgw/WK4O1/nWJASCLvMZmkv4qrSuF/LsHWEGlsNc="
         }
       ]
     },

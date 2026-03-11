@@ -27,9 +27,10 @@ namespace StudentRegistrationSystem.Pages.Account
 
         public class InputModel
         {
-            [Required(ErrorMessage = "Username is required")]
-            [Display(Name = "Username")]
-            public string Username { get; set; } = string.Empty;
+            [Required(ErrorMessage = "Email is required")]
+            [EmailAddress(ErrorMessage = "Invalid email address")]
+            [Display(Name = "Email")]
+            public string Email { get; set; } = string.Empty;
 
             [Required(ErrorMessage = "Password is required")]
             [DataType(DataType.Password)]
@@ -65,20 +66,20 @@ namespace StudentRegistrationSystem.Pages.Account
                 return Page();
             }
 
-            // Find user by username
+            // Find user by email
             var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.Username == Input.Username && u.IsActive);
+                .FirstOrDefaultAsync(u => u.Email == Input.Email && u.IsActive);
 
             if (user == null)
             {
-                ErrorMessage = "Invalid username or password.";
+                ErrorMessage = "Invalid email or password.";
                 return Page();
             }
 
             // Verify password
             if (!BCrypt.Net.BCrypt.Verify(Input.Password, user.PasswordHash))
             {
-                ErrorMessage = "Invalid username or password.";
+                ErrorMessage = "Invalid email or password.";
                 return Page();
             }
 

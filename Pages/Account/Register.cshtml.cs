@@ -28,12 +28,6 @@ namespace StudentRegistrationSystem.Pages.Account
             [Display(Name = "Full Name")]
             public string FullName { get; set; } = string.Empty;
 
-            [Required(ErrorMessage = "Username is required")]
-            [StringLength(50, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 50 characters")]
-            [RegularExpression(@"^[a-zA-Z0-9_]+$", ErrorMessage = "Username can only contain letters, numbers, and underscores")]
-            [Display(Name = "Username")]
-            public string Username { get; set; } = string.Empty;
-
             [Required(ErrorMessage = "Email is required")]
             [EmailAddress(ErrorMessage = "Invalid email address")]
             [Display(Name = "Email")]
@@ -69,13 +63,6 @@ namespace StudentRegistrationSystem.Pages.Account
                 return Page();
             }
 
-            // Check if username already exists
-            if (await _context.Users.AnyAsync(u => u.Username == Input.Username))
-            {
-                ErrorMessage = "Username is already taken. Please choose a different one.";
-                return Page();
-            }
-
             // Check if email already exists
             if (await _context.Users.AnyAsync(u => u.Email == Input.Email))
             {
@@ -86,7 +73,7 @@ namespace StudentRegistrationSystem.Pages.Account
             // Create new user
             var user = new User
             {
-                Username = Input.Username,
+                Username = Input.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(Input.Password),
                 FullName = Input.FullName,
                 Email = Input.Email,
