@@ -253,3 +253,4 @@
 /home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/obj/Debug/net8.0/StudentRegistrationSystem.pdb
 /home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/obj/Debug/net8.0/StudentRegistrationSystem.genruntimeconfig.cache
 /home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/obj/Debug/net8.0/ref/StudentRegistrationSystem.dll
+/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/bin/Debug/net8.0/BCrypt.Net-Next.dll
