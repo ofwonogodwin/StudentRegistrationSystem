@@ -1,0 +1,147 @@
+@page
+@model StudentRegistrationSystem.Pages.FeaturesModel
+@{
+    ViewData["Title"] = "Features";
+}
+
+<section class="page-header-section">
+    <div class="container">
+        <h1>Platform Features</h1>
+        <p>Discover all the powerful features that make StudentReg the best choice for student management.</p>
+    </div>
+</section>
+
+<section class="features-section pt-0">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-person-plus-fill"></i>
+                    </div>
+                    <h5>Student Registration</h5>
+                    <p>
+                        Quick and easy student registration with comprehensive data capture 
+                        including personal details, contact information, and academic data.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <h5>Advanced Search</h5>
+                    <p>
+                        Find students instantly with our powerful search engine. Filter by 
+                        name, registration number, course, year, and more.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-funnel-fill"></i>
+                    </div>
+                    <h5>Smart Filtering</h5>
+                    <p>
+                        Apply multiple filters simultaneously to narrow down results. 
+                        Filter by course, year of study, and registration date.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-lock-fill"></i>
+                    </div>
+                    <h5>Secure Authentication</h5>
+                    <p>
+                        Industry-standard authentication with secure password hashing, 
+                        session management, and role-based access control.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-check2-circle"></i>
+                    </div>
+                    <h5>Data Validation</h5>
+                    <p>
+                        Comprehensive form validation ensures data integrity. Real-time 
+                        feedback helps users enter correct information.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-pencil-square"></i>
+                    </div>
+                    <h5>Easy Editing</h5>
+                    <p>
+                        Update student records with ease. All changes are tracked and 
+                        validated before saving to the database.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-trash3-fill"></i>
+                    </div>
+                    <h5>Safe Deletion</h5>
+                    <p>
+                        Secure deletion process with confirmation prompts to prevent 
+                        accidental data loss and maintain data integrity.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-sort-down"></i>
+                    </div>
+                    <h5>Flexible Sorting</h5>
+                    <p>
+                        Sort student lists by any field - name, registration number, 
+                        course, year, or registration date.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-phone-fill"></i>
+                    </div>
+                    <h5>Responsive Design</h5>
+                    <p>
+                        Beautiful, functional interface on all devices. Access the 
+                        system from desktop, tablet, or mobile.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="info-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2>Experience These Features Today</h2>
+                <p>
+                    Sign up for free and discover how StudentReg can transform your 
+                    student management workflow.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a asp-page="/Account/Register" class="btn btn-primary btn-lg">
+                    Start Free Trial
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -4,17 +4,18 @@
     ViewData["Title"] = "Edit Student";
 }
 
-<div class="container">
+<div class="page-header-section">
+    <div class="container">
+        <h1>Edit Student Information</h1>
+        <p class="lead">Update the student's details below.</p>
+    </div>
+</div>
+
+<div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <!-- Page Header -->
-            <div class="page-header mb-4" style="background: linear-gradient(135deg, #ffd166 0%, #f0c040 100%);">
-                <h2 style="color: #333;"><i class="bi bi-pencil-square me-2"></i>Edit Student Information</h2>
-                <p style="color: #555;">Update the student's details below.</p>
-            </div>
-
             <div class="card">
-                <div class="card-header bg-white py-3">
+                <div class="card-header">
                     <h5 class="mb-0"><i class="bi bi-clipboard-data me-2"></i>Student Information</h5>
                 </div>
                 <div class="card-body p-4">
@@ -24,86 +25,62 @@
                         <input type="hidden" asp-for="Student.CreatedAt" />
 
                         <!-- Personal Information Section -->
-                        <h6 class="text-muted mb-3 border-bottom pb-2">
-                            <i class="bi bi-person me-2"></i>Personal Information
-                        </h6>
+                        <h6 class="section-title">Personal Information</h6>
 
                         <div class="row">
                             <div class="col-md-8 mb-3">
-                                <label asp-for="Student.FullName" class="form-label">
-                                    <i class="bi bi-person-badge me-1"></i>Full Name <span class="text-danger">*</span>
-                                </label>
+                                <label asp-for="Student.FullName" class="form-label">Full Name <span class="text-danger">*</span></label>
                                 <input asp-for="Student.FullName" class="form-control" placeholder="Enter full name" />
-                                <span asp-validation-for="Student.FullName" class="text-danger"></span>
+                                <span asp-validation-for="Student.FullName" class="text-danger small"></span>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label asp-for="Student.Gender" class="form-label">
-                                    <i class="bi bi-gender-ambiguous me-1"></i>Gender
-                                </label>
-                                <select asp-for="Student.Gender" class="form-select">
+                                <label asp-for="Student.Gender" class="form-label">Gender</label>
+                                <select asp-for="Student.Gender" class="form-control">
                                     <option value="">Select Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Other">Other</option>
                                 </select>
-                                <span asp-validation-for="Student.Gender" class="text-danger"></span>
+                                <span asp-validation-for="Student.Gender" class="text-danger small"></span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label asp-for="Student.DateOfBirth" class="form-label">
-                                    <i class="bi bi-calendar-date me-1"></i>Date of Birth
-                                </label>
+                                <label asp-for="Student.DateOfBirth" class="form-label">Date of Birth</label>
                                 <input asp-for="Student.DateOfBirth" type="date" class="form-control" />
-                                <span asp-validation-for="Student.DateOfBirth" class="text-danger"></span>
+                                <span asp-validation-for="Student.DateOfBirth" class="text-danger small"></span>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label asp-for="Student.PhoneNumber" class="form-label">
-                                    <i class="bi bi-telephone me-1"></i>Phone Number
-                                </label>
+                                <label asp-for="Student.PhoneNumber" class="form-label">Phone Number</label>
                                 <input asp-for="Student.PhoneNumber" class="form-control" placeholder="+256700000000" />
-                                <span asp-validation-for="Student.PhoneNumber" class="text-danger"></span>
+                                <span asp-validation-for="Student.PhoneNumber" class="text-danger small"></span>
                             </div>
                         </div>
 
                         <!-- Contact Information Section -->
-                        <h6 class="text-muted mb-3 border-bottom pb-2 mt-4">
-                            <i class="bi bi-envelope me-2"></i>Contact Information
-                        </h6>
+                        <h6 class="section-title mt-4">Contact Information</h6>
 
                         <div class="row">
                             <div class="col-md-12 mb-3">
-                                <label asp-for="Student.Email" class="form-label">
-                                    <i class="bi bi-envelope-at me-1"></i>Email Address <span
-                                    class="text-danger">*</span>
-                                </label>
-                                <input asp-for="Student.Email" type="email" class="form-control"
-                                       placeholder="student@example.com" />
-                                <span asp-validation-for="Student.Email" class="text-danger"></span>
+                                <label asp-for="Student.Email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                <input asp-for="Student.Email" type="email" class="form-control" placeholder="student@example.com" />
+                                <span asp-validation-for="Student.Email" class="text-danger small"></span>
                             </div>
                         </div>
 
                         <!-- Academic Information Section -->
-                        <h6 class="text-muted mb-3 border-bottom pb-2 mt-4">
-                            <i class="bi bi-mortarboard me-2"></i>Academic Information
-                        </h6>
+                        <h6 class="section-title mt-4">Academic Information</h6>
 
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label asp-for="Student.RegistrationNumber" class="form-label">
-                                    <i class="bi bi-hash me-1"></i>Registration Number <span
-                                    class="text-danger">*</span>
-                                </label>
-                                <input asp-for="Student.RegistrationNumber" class="form-control"
-                                       placeholder="e.g., REG/2024/001" />
-                                <span asp-validation-for="Student.RegistrationNumber" class="text-danger"></span>
+                                <label asp-for="Student.RegistrationNumber" class="form-label">Registration Number <span class="text-danger">*</span></label>
+                                <input asp-for="Student.RegistrationNumber" class="form-control" placeholder="e.g., REG/2024/001" />
+                                <span asp-validation-for="Student.RegistrationNumber" class="text-danger small"></span>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label asp-for="Student.YearOfStudy" class="form-label">
-                                    <i class="bi bi-calendar3 me-1"></i>Year of Study <span class="text-danger">*</span>
-                                </label>
-                                <select asp-for="Student.YearOfStudy" class="form-select">
+                                <label asp-for="Student.YearOfStudy" class="form-label">Year of Study <span class="text-danger">*</span></label>
+                                <select asp-for="Student.YearOfStudy" class="form-control">
                                     <option value="">Select Year</option>
                                     <option value="1">Year 1</option>
                                     <option value="2">Year 2</option>
@@ -111,34 +88,27 @@
                                     <option value="4">Year 4</option>
                                     <option value="5">Year 5</option>
                                 </select>
-                                <span asp-validation-for="Student.YearOfStudy" class="text-danger"></span>
+                                <span asp-validation-for="Student.YearOfStudy" class="text-danger small"></span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-12 mb-3">
-                                <label asp-for="Student.Course" class="form-label">
-                                    <i class="bi bi-book me-1"></i>Course / Program <span class="text-danger">*</span>
-                                </label>
-                                <input asp-for="Student.Course" class="form-control"
-                                       placeholder="e.g., Bachelor of Software Engineering" />
-                                <span asp-validation-for="Student.Course" class="text-danger"></span>
+                                <label asp-for="Student.Course" class="form-label">Course / Program <span class="text-danger">*</span></label>
+                                <input asp-for="Student.Course" class="form-control" placeholder="e.g., Bachelor of Software Engineering" />
+                                <span asp-validation-for="Student.Course" class="text-danger small"></span>
                             </div>
                         </div>
 
                         <hr class="my-4" />
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="d-flex justify-content-between">
-                                    <a asp-page="Index" class="btn btn-outline-secondary">
-                                        <i class="bi bi-arrow-left me-2"></i>Back to List
-                                    </a>
-                                    <button type="submit" class="btn btn-success btn-lg">
-                                        <i class="bi bi-check-circle me-2"></i>Save Changes
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="d-flex justify-content-between">
+                            <a asp-page="Index" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left me-2"></i>Back to List
+                            </a>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-check-circle me-2"></i>Save Changes
+                            </button>
                         </div>
                     </form>
                 </div>

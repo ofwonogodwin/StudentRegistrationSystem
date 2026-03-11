@@ -1,0 +1,110 @@
+@page
+@model StudentRegistrationSystem.Pages.AboutModel
+@{
+    ViewData["Title"] = "About Us";
+}
+
+<section class="page-header-section">
+    <div class="container">
+        <h1>About StudentReg</h1>
+        <p>Learn more about our mission to transform student registration.</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card mb-5">
+                    <div class="card-body p-5">
+                        <h3 class="mb-4">Our Mission</h3>
+                        <p class="text-lg">
+                            StudentReg was created with a simple goal: to make student registration 
+                            and management effortless for educational institutions of all sizes.
+                        </p>
+                        <p>
+                            We believe that administrators and staff should spend less time on 
+                            paperwork and more time supporting students. Our platform automates 
+                            tedious tasks, reduces errors, and provides powerful tools for 
+                            managing student data securely.
+                        </p>
+                        
+                        <hr class="my-5">
+                        
+                        <h3 class="mb-4">What We Offer</h3>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="d-flex gap-3">
+                                    <div class="feature-icon" style="width: 48px; height: 48px; font-size: 1.25rem;">
+                                        <i class="bi bi-lightning-fill"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Fast & Efficient</h6>
+                                        <p class="text-sm text-muted mb-0">Register students in seconds</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex gap-3">
+                                    <div class="feature-icon" style="width: 48px; height: 48px; font-size: 1.25rem;">
+                                        <i class="bi bi-shield-lock-fill"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Secure</h6>
+                                        <p class="text-sm text-muted mb-0">Enterprise-grade security</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex gap-3">
+                                    <div class="feature-icon" style="width: 48px; height: 48px; font-size: 1.25rem;">
+                                        <i class="bi bi-phone-fill"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Mobile Ready</h6>
+                                        <p class="text-sm text-muted mb-0">Works on any device</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex gap-3">
+                                    <div class="feature-icon" style="width: 48px; height: 48px; font-size: 1.25rem;">
+                                        <i class="bi bi-headset"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Support</h6>
+                                        <p class="text-sm text-muted mb-0">24/7 customer support</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr class="my-5">
+                        
+                        <h3 class="mb-4">Technology Stack</h3>
+                        <p>
+                            Built with modern technologies for performance and reliability:
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary-subtle text-primary px-3 py-2">ASP.NET Core</span>
+                            <span class="badge bg-primary-subtle text-primary px-3 py-2">Razor Pages</span>
+                            <span class="badge bg-primary-subtle text-primary px-3 py-2">Entity Framework Core</span>
+                            <span class="badge bg-primary-subtle text-primary px-3 py-2">SQLite</span>
+                            <span class="badge bg-primary-subtle text-primary px-3 py-2">Bootstrap 5</span>
+                            <span class="badge bg-primary-subtle text-primary px-3 py-2">C#</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a asp-page="/Account/Register" class="btn btn-primary btn-lg me-2">
+                        Get Started
+                    </a>
+                    <a asp-page="/Features" class="btn btn-outline btn-lg">
+                        View Features
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
