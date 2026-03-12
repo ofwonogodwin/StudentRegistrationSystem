@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Project Improvement Report</title>
+	<meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2026-03-12T19:27:16.336136697"/>
+	<meta name="" content=""/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 1in }
+		p { font-family: "Times New Roman", "Times", serif; font-size: 12pt; line-height: 115%; text-align: justify; margin-bottom: 0.1in; background: transparent }
+		h1 { line-height: 150%; text-align: center; margin-bottom: 0.07in; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", serif; font-size: 16pt; font-weight: bold }
+		h1.cjk { font-family: "Noto Serif CJK SC"; font-size: 16pt; font-weight: bold }
+		h1.ctl { font-family: "Noto Sans Devanagari"; font-size: 16pt; font-weight: bold }
+		h2 { line-height: 150%; text-align: justify; margin-top: 0.21in; margin-bottom: 0.14in; border-top: none; border-bottom: 1px solid #333333; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0in; padding-right: 0in; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 14pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Serif CJK SC"; font-size: 14pt; font-weight: bold }
+		h2.ctl { font-family: "Noto Sans Devanagari"; font-size: 14pt; font-weight: bold }
+		h3 { line-height: 150%; text-align: justify; margin-bottom: 0.11in; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 12pt; font-weight: bold }
+		h3.cjk { font-family: "Noto Serif CJK SC"; font-size: 12pt; font-weight: bold }
+		h3.ctl { font-family: "Noto Sans Devanagari"; font-size: 12pt; font-weight: bold }
+		td p { font-family: "Times New Roman", "Times", serif; font-size: 12pt; line-height: 150%; text-align: left; orphans: 0; widows: 0; background: transparent }
+		th p { font-family: "Times New Roman", "Times", serif; font-size: 12pt; font-weight: bold; line-height: 150%; text-align: left; orphans: 0; widows: 0; background: #f0f0f0; background: transparent }
+		strong { font-weight: bold }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h1 class="western">
+<font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">OFWONO
+GODWIN</font></font></h1>
+<h1 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">SEP23/BSE/3344U</font></font></h1>
+<p align="center"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt"><b>Selected
+Topics In Software Engineering(Test 2)</b></font></font></p>
+<h1 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">STUDENT
+REGISTRATION SYSTEM</font></font></h1>
+<h1 class="western"><br/>
+<br/>
+
+</h1>
+<h2 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">1.
+Introduction</font></font></h2>
+<h2 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">This
+report documents the improvements made to the Student Registration
+System following feedback received from Test 1. The enhancements
+focus on three key areas as recommended by the lecturer: </span><b>validation
+and error handling, user interface design improvements and additional
+features including search, filtering and user authentication.</b></font></font></h2>
+<h2 class="western" style="font-weight: normal"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">The
+improvements transform the basic CRUD application into a
+professional, production-ready student management system with modern
+design principles and enhanced user experience.</font></font></h2>
+<h2 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">2.
+Summary of Improvements</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<table cellpadding="2" cellspacing="2">
+	<tr>
+		<th style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Category</font></font></p>
+		</th>
+		<th style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Test
+			1 Status</font></font></p>
+		</th>
+		<th style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Test
+			2 Improvements</font></font></p>
+		</th>
+	</tr>
+	<tr>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Validation</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Basic
+			required fields</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Comprehensive
+			validation with regex patterns, email validation and custom error
+			messages</font></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">UI
+			Design</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Default
+			Bootstrap styling</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Professional
+			Sunbird AI-inspired design system with custom CSS variables</font></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Authentication</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">None</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Full
+			email/password authentication with secure login and registration</font></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Search
+			&amp; Filter</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">None</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Multi-criteria
+			search with course, year and sorting options</font></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Pages</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">4
+			pages (CRUD only)</font></font></p>
+		</td>
+		<td style="border: none; padding: 0in"><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">6
+			pages including landing, about, features and auth pages</font></font></p>
+		</td>
+	</tr>
+</table>
+<h2 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">3.
+New Features Implemented</font></font></h2>
+<h3 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">3.1
+User Authentication System</font></font></h3>
+<p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">A
+complete authentication system was implemented allowing users to
+securely access the student management features:</font></font></p>
+<ul>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Login
+	Page:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Users authenticate using their email address and password with
+	&quot;Remember Me&quot; functionality </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Registration
+	Page:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	New users can create accounts with full name, email and password </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Secure
+	Password Storage:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Passwords are hashed using BCrypt encryption algorithm </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Session
+	Management:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Cookie-based authentication with automatic logout on session expiry </font></font>
+	</p></li>
+	<li><p><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Access
+	Control:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Student management pages are protected and require authentication </font></font>
+	</p></li>
+</ul>
+<h3 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">3.2
+Search and Filtering Functionality</font></font></h3>
+<p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Advanced
+search capabilities were added to help administrators find students
+quickly:</font></font></p>
+<ul>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Text
+	Search:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Search by student name, registration number, or email address </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Course
+	Filter:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Filter students by their enrolled course/program </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Year
+	Filter:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Filter by year of study (Year 1 through Year 5) </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Sorting
+	Options:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Sort results by name, registration number, course, year, or
+	registration date </font></font>
+	</p></li>
+	<li><p><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Active
+	Filter Display:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Visual badges showing currently applied filters with quick clear
+	option </font></font>
+	</p></li>
+</ul>
+<h3 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">3.3
+Dashboard Statistics</font></font></h3>
+<p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">The
+Students Index page now features real-time statistics cards
+displaying:</font></font></p>
+<ul>
+	<li><p style="margin-bottom: 0in"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Total
+	number of registered students </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Number
+	of students matching current filter criteria </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Count
+	of available courses in the system </font></font>
+	</p></li>
+	<li><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Number
+	of year levels supported </font></font>
+	</p></li>
+</ul>
+<h2 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">4.
+User Interface Improvements</font></font></h2>
+<h3 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">4.1
+Design System Implementation</font></font></h3>
+<p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">A
+comprehensive design system was created inspired by professional SaaS
+applications:</font></font></p>
+<ul>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Color
+	Palette:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Primary blue (#2563eb), secondary dark (#0f172a) and accent cyan
+	(#06b6d4) </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Typography:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Inter font family for modern, readable text across all devices </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">CSS
+	Variables:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Centralized design tokens for consistent spacing, shadows and border
+	radius </font></font>
+	</p></li>
+	<li><p><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Responsive
+	Design:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Fully responsive layouts that work seamlessly on mobile, tablet and
+	desktop </font></font>
+	</p></li>
+</ul>
+<h3 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">4.2
+Navigation and Layout</font></font></h3>
+<ul>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Fixed
+	Navigation Bar:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Professional navbar with brand logo, centered navigation links and
+	user dropdown menu </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Hero
+	Section:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Eye-catching landing page with gradient patterns and call-to-action
+	buttons </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Professional
+	Footer:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Multi-column footer with product links, resources, company
+	information and social media icons </font></font>
+	</p></li>
+	<li><p><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Page
+	Headers:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Consistent header sections with gradient backgrounds on all major
+	pages </font></font>
+	</p></li>
+</ul>
+<h3 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">4.3
+New Public Pages</font></font></h3>
+<ul>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Landing
+	Page (Home):</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Marketing-style homepage with hero section, statistics counters,
+	feature highlights and call-to-action sections </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">About
+	Page:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Information about the system with mission statement and team values </font></font>
+	</p></li>
+	<li><p><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Features
+	Page:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Showcase of system capabilities with icon-based feature cards </font></font>
+	</p></li>
+</ul>
+<h3 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">4.4
+Form and Table Improvements</font></font></h3>
+<ul>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Card-Based
+	Forms:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Clean form layouts with section titles and organized field groupings
+	</font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Enhanced
+	Tables:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Hover effects, avatar initials and action button styling </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Empty
+	States:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Friendly messages and guidance when no data is available </font></font>
+	</p></li>
+	<li><p><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Toast
+	Notifications:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Success and error messages displayed as dismissible toasts </font></font>
+	</p></li>
+</ul>
+<h2 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">5.
+Enhanced Validation and Error Handling</font></font></h2>
+<h3 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">5.1
+Student Model Validation</font></font></h3>
+<p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Comprehensive
+validation rules were added to the Student entity:</font></font></p>
+<ul>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Full
+	Name:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Required, 3-100 characters, letters and spaces only </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Email:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Required, valid email format validation </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Registration
+	Number:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Required, alphanumeric with slashes pattern (e.g., REG/2024/001) </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Phone
+	Number:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Optional, international format validation </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Year
+	of Study:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Required, range validation (1-5) </font></font>
+	</p></li>
+	<li><p><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Course:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Required, 3-100 characters </font></font>
+	</p></li>
+</ul>
+<h3 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">5.2
+User-Friendly Error Messages</font></font></h3>
+<ul>
+	<li><p style="margin-bottom: 0in"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Clear,
+	descriptive validation messages displayed inline below each field </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Model-level
+	error summary for complex validation failures </font></font>
+	</p></li>
+	<li><p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Alert
+	banners for authentication errors (invalid credentials, duplicate
+	email) </font></font>
+	</p></li>
+</ul>
+<h2 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">6.
+Additional Data Fields</font></font></h2>
+<p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">The
+Student model was enhanced with additional fields to capture more
+comprehensive student information:</font></font></p>
+<ul>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Email
+	Address:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	For direct student communication </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Phone
+	Number:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Optional contact information </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Date
+	of Birth:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	For age verification and records </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Gender:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Male, Female, or Other options </font></font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Created
+	At:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Timestamp of student registration </font></font>
+	</p></li>
+	<li><p><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Updated
+	At:</font></font></strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">
+	Timestamp of last record modification </font></font>
+	</p></li>
+</ul>
+<h2 class="western"><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">7.
+Conclusion</font></font></h2>
+<p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">The
+improvements implemented in Test 2 have significantly enhanced the
+Student Registration System from a basic CRUD application to a
+professional, feature-rich management system. The addition of user
+authentication ensures data security, while the search and filtering
+capabilities improve administrative efficiency. The modern UI design
+creates a polished, professional appearance suitable for production
+deployment.</font></font></p>
+<p><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">These
+enhancements demonstrate the application of software engineering best
+practices including input validation, secure authentication, user
+experience design and responsive web development.</font></font></p>
+<p align="center" style="margin-top: 0.42in"><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">---
+</font></font></strong><strong><font face="Arial, sans-serif"><font size="3" style="font-size: 12pt">Thank
+You --</font></font></strong></p>
+</body>
+</html>
