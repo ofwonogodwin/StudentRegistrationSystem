@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RMnVXyT7Ywk=",
+  "dgSpecHash": "z7Lc3ummBTA=",
   "success": true,
   "projectFilePath": "/home/godwin-ofwono/Desktop/Utamu /Year4 Sem 1/Selected Topics In Software Engineering/StudentRegistrationSystem/StudentRegistrationSystem.csproj",
   "expectedPackageFiles": [
@@ -142,7 +142,7 @@
     "/home/godwin-ofwono/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
     "/home/godwin-ofwono/.nuget/packages/system.threading.tasks.dataflow/7.0.0/system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "/home/godwin-ofwono/.nuget/packages/system.windows.extensions/7.0.0/system.windows.extensions.7.0.0.nupkg.sha512",
-    "/home/godwin-ofwono/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.24/microsoft.netcore.app.host.linux-x64.8.0.24.nupkg.sha512"
+    "/home/godwin-ofwono/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.25/microsoft.netcore.app.host.linux-x64.8.0.25.nupkg.sha512"
   ],
   "logs": []
 }

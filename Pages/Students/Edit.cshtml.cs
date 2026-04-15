@@ -4,17 +4,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using StudentRegistrationSystem.Data;
 using StudentRegistrationSystem.Models;
+using StudentRegistrationSystem.Services.Interfaces;
 
 namespace StudentRegistrationSystem.Pages.Students
 {
-    [Authorize]
+    [Authorize(Policy = "StaffOrAdmin")]
     public class EditModel : PageModel
     {
         private readonly ApplicationDbContext _context;
+        private readonly IAuditLogService _auditLogService;
 
-        public EditModel(ApplicationDbContext context)
+        public EditModel(ApplicationDbContext context, IAuditLogService auditLogService)
         {
             _context = context;
+            _auditLogService = auditLogService;
         }
 
         [BindProperty]
@@ -72,6 +75,14 @@ namespace StudentRegistrationSystem.Pages.Students
             try
             {
                 await _context.SaveChangesAsync();
+                await _auditLogService.RecordAsync(
+                    "EDIT",
+                    "Student",
+                    Student.Id.ToString(),
+                    $"Updated student record for {Student.FullName}",
+                    User.Identity?.Name ?? "Unknown",
+                    User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value ?? "Unknown",
+                    HttpContext.Connection.RemoteIpAddress?.ToString());
                 TempData["SuccessMessage"] = $"Student {Student.FullName} has been updated successfully!";
             }
             catch (DbUpdateConcurrencyException)

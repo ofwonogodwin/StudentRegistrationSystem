@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using StudentRegistrationSystem.Data;
 using StudentRegistrationSystem.Models;
+using StudentRegistrationSystem.Services;
+using StudentRegistrationSystem.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,10 @@ builder.Services.AddRazorPages();
 // Add Entity Framework
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IAuditLogService, AuditLogService>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
 
 // Add Cookie Authentication
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -23,7 +29,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.SlidingExpiration = true;
     });
 
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("StaffOrAdmin", policy => policy.RequireRole("Admin", "Staff"));
+    options.AddPolicy("StudentOrHigher", policy => policy.RequireRole("Admin", "Staff", "Student"));
+});
 
 var app = builder.Build();
 
@@ -55,7 +66,7 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureDeleted();
     context.Database.EnsureCreated();
 
-    // Seed admin user if not exists
+    // Seed admin and staff users if not exists
     if (!context.Users.Any(u => u.Email == "admin@studentreg.com"))
     {
         context.Users.Add(new User
@@ -68,8 +79,23 @@ using (var scope = app.Services.CreateScope())
             IsActive = true,
             CreatedAt = DateTime.Now
         });
-        context.SaveChanges();
     }
+
+    if (!context.Users.Any(u => u.Email == "staff@studentreg.com"))
+    {
+        context.Users.Add(new User
+        {
+            Username = "staff@studentreg.com",
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword("staff123"),
+            FullName = "Academic Staff",
+            Email = "staff@studentreg.com",
+            Role = "Staff",
+            IsActive = true,
+            CreatedAt = DateTime.Now
+        });
+    }
+
+    context.SaveChanges();
 }
 
 app.Run();

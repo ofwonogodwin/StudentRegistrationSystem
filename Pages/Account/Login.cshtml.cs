@@ -87,7 +87,7 @@ namespace StudentRegistrationSystem.Pages.Account
             user.LastLogin = DateTime.Now;
             await _context.SaveChangesAsync();
 
-            // Create claims
+            // Create claims for role-based authorization.
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),

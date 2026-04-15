@@ -4,17 +4,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using StudentRegistrationSystem.Data;
 using StudentRegistrationSystem.Models;
+using StudentRegistrationSystem.Services.Interfaces;
 
 namespace StudentRegistrationSystem.Pages.Students
 {
-    [Authorize]
+    [Authorize(Policy = "StaffOrAdmin")]
     public class DeleteModel : PageModel
     {
         private readonly ApplicationDbContext _context;
+        private readonly IAuditLogService _auditLogService;
 
-        public DeleteModel(ApplicationDbContext context)
+        public DeleteModel(ApplicationDbContext context, IAuditLogService auditLogService)
         {
             _context = context;
+            _auditLogService = auditLogService;
         }
 
         [BindProperty]
@@ -52,6 +55,14 @@ namespace StudentRegistrationSystem.Pages.Students
                 Student = student;
                 _context.Students.Remove(Student);
                 await _context.SaveChangesAsync();
+                await _auditLogService.RecordAsync(
+                    "DELETE",
+                    "Student",
+                    Student.Id.ToString(),
+                    $"Deleted student record for {Student.FullName}",
+                    User.Identity?.Name ?? "Unknown",
+                    User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value ?? "Unknown",
+                    HttpContext.Connection.RemoteIpAddress?.ToString());
                 TempData["SuccessMessage"] = $"Student {Student.FullName} has been deleted successfully!";
             }
 

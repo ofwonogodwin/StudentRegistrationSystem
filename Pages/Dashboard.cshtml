@@ -1,0 +1,100 @@
+@page
+@model StudentRegistrationSystem.Pages.DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="page-header-section">
+    <div class="container">
+        <h1>Dashboard</h1>
+        <p class="lead">Academic summary and distribution charts for students, courses, and year levels.</p>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-people"></i></div>
+            <div class="stat-content">
+                <div class="stat-number">@Model.Summary.TotalStudents</div>
+                <div class="stat-label">Total Students</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;"><i class="bi bi-person-badge"></i></div>
+            <div class="stat-content">
+                <div class="stat-number">@Model.Summary.TotalUsers</div>
+                <div class="stat-label">Registered Users</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;"><i class="bi bi-book"></i></div>
+            <div class="stat-content">
+                <div class="stat-number">@Model.Summary.TotalCourses</div>
+                <div class="stat-label">Courses</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-7">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-pie-chart me-2"></i>Students by Course</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="courseChart" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-bar-chart me-2"></i>Students by Year</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="yearChart" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script>
+        const courseLabels = @Html.Raw(Model.CourseLabelsJson);
+        const courseValues = @Html.Raw(Model.CourseValuesJson);
+        const yearLabels = @Html.Raw(Model.YearLabelsJson);
+        const yearValues = @Html.Raw(Model.YearValuesJson);
+
+        new Chart(document.getElementById('courseChart'), {
+            type: 'doughnut',
+            data: {
+                labels: courseLabels,
+                datasets: [{
+                    data: courseValues,
+                    backgroundColor: ['#2563eb', '#06b6d4', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#14b8a6', '#0f172a']
+                }]
+            },
+            options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+        });
+
+        new Chart(document.getElementById('yearChart'), {
+            type: 'bar',
+            data: {
+                labels: yearLabels,
+                datasets: [{
+                    label: 'Students',
+                    data: yearValues,
+                    backgroundColor: '#2563eb'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, precision: 0 } }
+            }
+        });
+    </script>
+}
