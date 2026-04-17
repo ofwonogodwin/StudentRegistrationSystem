@@ -77,7 +77,7 @@ namespace StudentRegistrationSystem.Pages.Account
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(Input.Password),
                 FullName = Input.FullName,
                 Email = Input.Email,
-                Role = "User",
+                Role = "Student",
                 IsActive = true,
                 CreatedAt = DateTime.Now
             };

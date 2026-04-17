@@ -1,20 +1,20 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using StudentRegistrationSystem.Data;
 using StudentRegistrationSystem.Models;
+using StudentRegistrationSystem.Models.ViewModels;
+using StudentRegistrationSystem.Services.Interfaces;
 
 namespace StudentRegistrationSystem.Pages.Students
 {
     [Authorize]
     public class IndexModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IStudentService _studentService;
 
-        public IndexModel(ApplicationDbContext context)
+        public IndexModel(IStudentService studentService)
         {
-            _context = context;
+            _studentService = studentService;
         }
 
         public IList<Student> Students { get; set; } = new List<Student>();
@@ -31,69 +31,41 @@ namespace StudentRegistrationSystem.Pages.Students
         [BindProperty(SupportsGet = true)]
         public string? SortOrder { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public int PageIndex { get; set; } = 1;
+
+        public int PageSize { get; set; } = 10;
+
         public List<string> AvailableCourses { get; set; } = new List<string>();
 
         public int TotalStudents { get; set; }
         public int FilteredCount { get; set; }
+        public int TotalPages { get; set; }
+        public bool HasPreviousPage { get; set; }
+        public bool HasNextPage { get; set; }
 
         public async Task OnGetAsync()
         {
-            // Get all available courses for filter dropdown
-            AvailableCourses = await _context.Students
-                .Select(s => s.Course)
-                .Distinct()
-                .OrderBy(c => c)
-                .ToListAsync();
+            AvailableCourses = (await _studentService.GetAvailableCoursesAsync()).ToList();
 
-            // Start with all students
-            var query = _context.Students.AsQueryable();
-
-            // Apply search filter (search in name, registration number, email, course)
-            if (!string.IsNullOrWhiteSpace(SearchTerm))
-            {
-                var searchLower = SearchTerm.ToLower();
-                query = query.Where(s =>
-                    s.FullName.ToLower().Contains(searchLower) ||
-                    s.RegistrationNumber.ToLower().Contains(searchLower) ||
-                    s.Email.ToLower().Contains(searchLower) ||
-                    s.Course.ToLower().Contains(searchLower));
-            }
-
-            // Apply course filter
-            if (!string.IsNullOrWhiteSpace(CourseFilter))
-            {
-                query = query.Where(s => s.Course == CourseFilter);
-            }
-
-            // Apply year filter
-            if (YearFilter.HasValue)
-            {
-                query = query.Where(s => s.YearOfStudy == YearFilter.Value);
-            }
-
-            // Apply sorting
-            query = SortOrder switch
-            {
-                "name_desc" => query.OrderByDescending(s => s.FullName),
-                "reg_asc" => query.OrderBy(s => s.RegistrationNumber),
-                "reg_desc" => query.OrderByDescending(s => s.RegistrationNumber),
-                "course_asc" => query.OrderBy(s => s.Course),
-                "course_desc" => query.OrderByDescending(s => s.Course),
-                "year_asc" => query.OrderBy(s => s.YearOfStudy),
-                "year_desc" => query.OrderByDescending(s => s.YearOfStudy),
-                "date_asc" => query.OrderBy(s => s.CreatedAt),
-                "date_desc" => query.OrderByDescending(s => s.CreatedAt),
-                _ => query.OrderBy(s => s.FullName) // default: name_asc
-            };
-
-            TotalStudents = await _context.Students.CountAsync();
-            Students = await query.ToListAsync();
-            FilteredCount = Students.Count;
+            var pagedResult = await _studentService.GetStudentsAsync(SearchTerm, CourseFilter, YearFilter, SortOrder, PageIndex, PageSize);
+            Students = pagedResult.Items.ToList();
+            TotalStudents = pagedResult.TotalCount;
+            FilteredCount = pagedResult.TotalCount;
+            TotalPages = pagedResult.TotalPages;
+            HasPreviousPage = pagedResult.HasPreviousPage;
+            HasNextPage = pagedResult.HasNextPage;
         }
 
-        public IActionResult OnPostClearFilters()
+        public async Task<IActionResult> OnGetExportCsvAsync()
         {
-            return RedirectToPage();
+            if (!(User.IsInRole("Admin") || User.IsInRole("Staff")))
+            {
+                return Forbid();
+            }
+
+            var csv = await _studentService.ExportStudentsCsvAsync(SearchTerm, CourseFilter, YearFilter, SortOrder);
+            return File(csv, "text/csv", $"students-{DateTime.Now:yyyyMMdd-HHmmss}.csv");
         }
     }
 }

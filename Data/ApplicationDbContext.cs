@@ -11,6 +11,7 @@ namespace StudentRegistrationSystem.Data
 
         public DbSet<Student> Students { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<AuditLog> AuditLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -50,6 +51,19 @@ namespace StudentRegistrationSystem.Data
                 // Create unique indexes
                 entity.HasIndex(e => e.Username).IsUnique();
                 entity.HasIndex(e => e.Email).IsUnique();
+            });
+
+            modelBuilder.Entity<AuditLog>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Action).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.EntityName).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.EntityId).HasMaxLength(100);
+                entity.Property(e => e.Details).HasMaxLength(500);
+                entity.Property(e => e.PerformedBy).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.PerformedByRole).HasMaxLength(20);
+                entity.Property(e => e.IpAddress).HasMaxLength(50);
+                entity.Property(e => e.CreatedAt).HasDefaultValueSql("datetime('now')");
             });
         }
     }

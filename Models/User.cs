@@ -26,7 +26,7 @@ namespace StudentRegistrationSystem.Models
         public string Email { get; set; } = string.Empty;
 
         [StringLength(20)]
-        public string Role { get; set; } = "User"; // Admin, User
+        public string Role { get; set; } = "Student"; // Admin, Staff, Student
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
